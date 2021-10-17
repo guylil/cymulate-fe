@@ -30,10 +30,19 @@ export default {
   },
   methods:{
     getData(){
-      return [
-        {email: 'a@cy.com', status:'opened'},
-        {email: 'b@cy.com', status:'received'}
-      ]
+      const users = []
+      fetch('http://localhost:3000/list')
+          .then(res => {
+            if (res.status ===200){
+              const data = res.json()
+              data.then(response => {
+                console.log('response: ', response)
+                response['statusList'].forEach(item => users.push({email: item['userId'], status:'link clicked'}))
+              }).catch(err => console.log('not valid: ',err))
+            }
+          })
+      return users
+
     }
   }
 
