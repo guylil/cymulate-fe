@@ -1,11 +1,30 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
-  </div>
+
+  <v-app>
+
+    <v-app-bar app>
+<!--      <router-link to="/">Home</router-link> |-->
+<!--      <router-link to="/about">About</router-link>-->
+      <v-row>
+        <v-img
+            src="https://cymulate.com/wp-content/uploads/2021/08/cymulate-logo.png"
+            contain
+            height="43"
+
+        />
+      </v-row>
+    </v-app-bar>
+
+<!--    <v-navigation-drawer app>-->
+<!--    </v-navigation-drawer>-->
+
+    <v-main>
+      <v-container fluid>
+        <router-view/>
+      </v-container>
+    </v-main>
+
+  </v-app>
 </template>
 
 <style lang="scss">
